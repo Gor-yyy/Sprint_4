@@ -29,7 +29,7 @@ public void clickDalle(){
     driver.findElement(buttonDalle).click();
 }
 
-public void clicktopOrderButton(){
+public void clickTopOrderButton(){
     driver.findElement(topOrderButton).click();
 }
 
