@@ -80,7 +80,7 @@ public OrderTest(boolean useTopButton, String name, String surname, String addre
     OrderPage orderPage = new OrderPage(driver);
 
       if (useTopButton) {
-          orderPage.clicktopOrderButton();
+          orderPage.clickTopOrderButton();
       } else {
           orderPage.clickBottomOrderButton();
       }
