@@ -1,11 +1,5 @@
 package tests;
-
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import pageobjects.MainPage;
@@ -15,8 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 
-public class QuestionsTest{
-    private WebDriver driver;
+public class QuestionsTest extends BaseTest{
     private String expected;
 private int index;
 
@@ -38,11 +31,7 @@ this.index = index;
 
     };
     }
-    @Before
-    public void setUp(){
-        driver = new ChromeDriver();
-        driver.get("https://qa-scooter.praktikum-services.ru/");
-    }
+
     @Test
     public void checkAnswerTextIsDisplayed(){
      String actual;
@@ -52,9 +41,6 @@ p1.waitForAnswer(index);
 actual = p1.getAnswerText(index);
 assertEquals(expected, actual);
 }
-@After
-   public void closeWeb(){
-    driver.quit();
-    }
+
 }
 

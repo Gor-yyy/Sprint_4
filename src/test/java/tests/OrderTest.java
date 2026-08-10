@@ -1,20 +1,15 @@
 package tests;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pageobjects.OrderPage;
 import static org.junit.Assert.assertTrue;
 
 
 @RunWith(Parameterized.class)
-public class OrderTest {
+public class OrderTest  extends BaseTest {
 
-    private WebDriver driver;
 
     private final boolean useTopButton;
     private final String name;
@@ -69,11 +64,7 @@ public OrderTest(boolean useTopButton, String name, String surname, String addre
         };
     }
 
-  @Before
-    public void setUp(){
-    driver = new ChromeDriver();
-    driver.get("https://qa-scooter.praktikum-services.ru/");
-  }
+
 
   @Test
     public void checkOrder(){
@@ -93,9 +84,7 @@ public OrderTest(boolean useTopButton, String name, String surname, String addre
       assertTrue(actualResult.contains("Заказ оформлен"));
     }
 
-    @After
-    public void closePage(){
-    driver.quit();
-    }
+
+
 
 }
